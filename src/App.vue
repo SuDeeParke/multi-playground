@@ -2,11 +2,13 @@
 import MouseLight from "./components/MouseLight.vue";
 import Descriplayer from "./components/Descriplayer.vue";
 import FlipClock from "./components/FlipClock.vue";
+import FlipNum from "./components/FlipNum.vue";
 </script>
 
 <template>
   <div class="group">
-    <FlipClock></FlipClock>
+    <!-- <FlipClock></FlipClock> -->
+    <FlipNum></FlipNum>
   </div>
 
   <!-- <div class="group">

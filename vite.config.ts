@@ -8,12 +8,7 @@ export default defineConfig({
   plugins: [vue(),
     AutoImport({
       imports: ['vue'],
-      resolvers: [],
-      dts: true,
-      dirs: [
-        './composables',
-      ],
-      vueTemplate: true,
+      dts: "src/types/auto-import.d.ts",
     }),],
   resolve: {
     alias: {
