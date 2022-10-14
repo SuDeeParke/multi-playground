@@ -10,7 +10,47 @@
 </template>
 
 <script setup lang="ts">
+
+const animationDuration = 0.5
 const count = ref(0)
+
+const numbGroup = ref<HTMLElement>()
+
+// 复原翻转 旋转角复原， 数值重设 
+const reset = (group: HTMLCollection) => {
+  (group[1] as HTMLElement).style.transition = 'all 0s linear 0s';
+  (group[1] as HTMLElement).style.transform = "rotateX(-90deg)";
+  (group[2] as HTMLElement).style.transition = 'all 0s linear 0s';
+  (group[2] as HTMLElement).style.transform = "rotateX(0deg)";
+}
+
+// 处理翻转过程
+const flip = (group: HTMLCollection | undefined) => {
+  if(group) {
+    reset(group);
+    (group[2] as HTMLElement).style.transition = `all ${animationDuration}s linear 0s`;
+    (group[1] as HTMLElement).style.transition = `all ${animationDuration}s linear ${animationDuration}s`;
+    setTimeout(()=> {
+      (group[2] as HTMLElement).style.transform = "rotateX(90deg)";
+      (group[1] as HTMLElement).style.transform = "rotateX(0deg)";
+    }, 0)
+
+  }
+}
+
+onMounted(() => {
+  nextTick(() => {
+    flip(numbGroup.value && numbGroup.value.children)
+  })
+  setInterval(() => {
+    // count.value ++;
+    nextTick(() => {
+
+      // flip(numbGroup.value && numbGroup.value.children)
+    })
+
+  },1000)
+})
 
 
 </script>
@@ -31,7 +71,7 @@ $bgColor: #3b3e3b;
   transform-style: preserve-3d;
 }
 
-.flip-clock {
+.flip-numb {
   display: flex;
   width: 100%;
   height: 100%;
@@ -39,7 +79,7 @@ $bgColor: #3b3e3b;
   align-items: center;
   background-color: #eee;
 
-  .hour {
+  .num-group {
     position: relative;
     display: flex;
     justify-content: center;
@@ -79,6 +119,7 @@ $bgColor: #3b3e3b;
       transform-origin: bottom;
       border-bottom: 2px solid $bgColor;
       transform: rotateX(-90deg);
+      // to 0
     }
 
     .bottom {
@@ -90,6 +131,7 @@ $bgColor: #3b3e3b;
       transform-origin: top;
       border-top: 2px solid $bgColor;
       transform: rotateX(0deg);
+      // to 90
     }
 
     .bottom_next {
