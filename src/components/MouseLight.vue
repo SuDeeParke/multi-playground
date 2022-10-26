@@ -58,7 +58,6 @@ const createPointLight = () => {
   light.position.set(0, 0, 0);
   light.castShadow = true; // default false
   scene.add(light);
-  
 }
  
 const addHelper = () => {

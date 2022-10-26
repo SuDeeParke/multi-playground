@@ -3,18 +3,25 @@ import MouseLight from "./components/MouseLight.vue";
 import Descriplayer from "./components/Descriplayer.vue";
 import FlipClock from "./components/FlipClock.vue";
 import FlipNum from "./components/FlipNum.vue";
+import CarDIY from "./components/CarDIY.vue";
 </script>
 
 <template>
-  <div class="group">
-    <!-- <FlipClock></FlipClock> -->
+  <!-- <div class="group">
+    <FlipClock></FlipClock>
     <FlipNum></FlipNum>
-  </div>
+  </div> -->
 
   <!-- <div class="group">
     <Des criplayer></Des>
     <MouseLight></MouseLight>
   </div> -->
+
+
+  <div class="group">
+    <CarDIY></CarDIY>
+  </div>
+
 </template>
 
 <style lang="scss" scoped>
