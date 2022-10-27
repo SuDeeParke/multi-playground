@@ -27,13 +27,19 @@ import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment
 import brakeImg from '@/assets/images/brake.png' 
 import carbodyImg from '@/assets/images/carbody2.png' 
 import wheelsImg from '@/assets/images/wheels.png' 
+import { Color } from 'three';
 
 
 const CAR = ref();
 const BODY_COLOR = ref<THREE.Mesh>();
 const WHEEL_COLOR = ref<THREE.Mesh>();
 const BRACK_COLOR = ref<THREE.Mesh>();
+
+// options 
 const COLORs = ['#eff5f9', '#000000', '#252625', '#5e131d', '#8b7a82','#00194b']
+const COLORs_wheels = ['#232323', '#FFCC66', '#819198', 'rgb(202, 227, 59)']
+const COLORs_brack = ['rgb(202, 227, 59)', '#ebcb6a', '#f50', '', '#d6dfe3']
+
 
 const container = ref()
 const scene = new THREE.Scene();
@@ -41,12 +47,16 @@ const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer({
   antialias: true
 })
-const controls = new OrbitControls(camera, renderer.domElement)
-controls.autoRotate = true
-controls.autoRotateSpeed = 0.6
-controls.enableDamping = true
-controls.dampingFactor = 0.1
+const controls = new OrbitControls(camera, renderer.domElement.)
 controls.enablePan = false
+controls.enableDamping = true
+controls.autoRotate = true
+
+controls.autoRotateSpeed = 0.6
+controls.dampingFactor = 0.1
+
+controls.minDistance = 5
+controls.maxDistance = 55
 
 const setting = () => {
   // camera
