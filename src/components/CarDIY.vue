@@ -2,17 +2,17 @@
   <div class="UI">
     <ul>
       <li>
-        <button><img class="carbody" :src="carbodyImg">车身</button>
+        <button><img class="carbody" :src="carbodyImg" @click="switchPart(PART.BODY)" :class="{ 'focus': part === PART.BODY }">车身</button>
       </li>
       <li>
-        <button><img :src="wheelsImg">轮毂</button>
+        <button><img :src="wheelsImg" @click="switchPart(PART.WHEELS)" :class="{ 'focus': part === PART.BODY }">轮毂</button>
       </li>
       <li>
-        <button><img :src="brakeImg">刹车</button>
+        <button><img :src="brakeImg" @click="switchPart(PART.BRACK)" :class="{ 'focus': part === PART.BODY }">刹车</button>
       </li>
     </ul>
-    <div class="colors">
-      <span v-for="item in COLORs" :style="{ 'background-color': item }" @click="changeColor(item)"></span>
+    <div class="colors" v-if="part!==PART.DEFAULT">
+      <span v-for="item in optionColors" :style="{ 'background-color': item }" @click="changeColor(item, part)"></span>
     </div>
   </div>
   
@@ -27,7 +27,6 @@ import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment
 import brakeImg from '@/assets/images/brake.png' 
 import carbodyImg from '@/assets/images/carbody2.png' 
 import wheelsImg from '@/assets/images/wheels.png' 
-import { Color } from 'three';
 
 
 const CAR = ref();
@@ -35,10 +34,23 @@ const BODY_COLOR = ref<THREE.Mesh>();
 const WHEEL_COLOR = ref<THREE.Mesh>();
 const BRACK_COLOR = ref<THREE.Mesh>();
 
+enum PART{
+  DEFAULT = '无',
+  BODY =  '车身',
+  WHEELS = '轮毂',
+  BRACK = '刹车',
+}
+
 // options 
-const COLORs = ['#eff5f9', '#000000', '#252625', '#5e131d', '#8b7a82','#00194b']
-const COLORs_wheels = ['#232323', '#FFCC66', '#819198', 'rgb(202, 227, 59)']
-const COLORs_brack = ['rgb(202, 227, 59)', '#ebcb6a', '#f50', '', '#d6dfe3']
+const part = ref<string>(PART.DEFAULT)
+const optionColors = ref<string[]>([])
+
+const COLORS = {
+  '车身': ['#eff5f9', '#000000', '#252625', '#5e131d', '#8b7a82', '#00194b'],
+  '轮毂': ['#000000', '#FFCC66', '#819198', 'rgb(202, 227, 59)'],
+  '刹车': ['rgb(202, 227, 59)', '#ebcb6a', '#f50', '', '#d6dfe3']
+}
+
 
 
 const container = ref()
@@ -47,7 +59,7 @@ const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer({
   antialias: true
 })
-const controls = new OrbitControls(camera, renderer.domElement.)
+const controls = new OrbitControls(camera, renderer.domElement)
 controls.enablePan = false
 controls.enableDamping = true
 controls.autoRotate = true
@@ -174,10 +186,25 @@ const init = (container: HTMLElement) => {
 
 // TODO 修改轮毂和刹车颜色
 
-const changeColor = (HEX:string) => {
-  if (BODY_COLOR){
-    (BODY_COLOR.value as any).material.color = new THREE.Color(HEX)
+const changeColor = (HEX:string, part: PART) => {
+  switch (part) {
+    case PART.BODY:
+      (BODY_COLOR.value && BODY_COLOR.value as any).material.color = new THREE.Color(HEX)
+      break;
+    case PART.WHEELS:
+      (WHEEL_COLOR.value && WHEEL_COLOR.value as any).material.color = new THREE.Color(HEX)
+      break;
+    case PART.BRACK:
+      (BRACK_COLOR.value && BRACK_COLOR.value as any).material.color = new THREE.Color(HEX)
+      break;
+    default:
+      break;
   }
+}
+
+const switchPart = (p: PART.BODY|PART.BRACK|PART.WHEELS) => {
+  part.value = p
+  optionColors.value = COLORS[p]
 }
 
 
@@ -219,11 +246,17 @@ onMounted(() => {
         border: none;
         background-color: rgba($color: #000, $alpha: 0);
         pointer-events: all;
+        padding: 2px;
         cursor: pointer;
         text-shadow: 0 0 10px rgba($color: #000, $alpha: 0.2);
         font-size: 10px;
         font-weight: bolder;
         color: #fff;
+        border-bottom: 0px solid rgba(0,0,0,0);
+        transition: all 0.5s;
+        &:hover {
+          border-bottom: 2px solid #fff;
+        }
         img {
           width: 24px;
           filter:invert(100%) drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.6));
@@ -232,6 +265,9 @@ onMounted(() => {
           filter:invert(100%) drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.6));
           width: 44px;
         }
+      }
+      button.focus {
+        border-bottom: 2px solid #fff;
       }
     }
   }
