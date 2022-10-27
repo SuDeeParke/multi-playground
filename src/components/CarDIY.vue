@@ -2,17 +2,17 @@
   <div class="UI">
     <ul>
       <li>
-        <button><img class="carbody" :src="carbodyImg" @click="switchPart(PART.BODY)" :class="{ 'focus': part === PART.BODY }">车身</button>
+        <button  @click="switchPart(PART.BODY)" :class="{ 'focus': part === PART.BODY }"><img class="carbody" :src="carbodyImg" >车身</button>
       </li>
       <li>
-        <button><img :src="wheelsImg" @click="switchPart(PART.WHEELS)" :class="{ 'focus': part === PART.BODY }">轮毂</button>
+        <button @click="switchPart(PART.WHEELS)" :class="{ 'focus': part === PART.BODY }"><img :src="wheelsImg"  >轮毂</button>
       </li>
       <li>
-        <button><img :src="brakeImg" @click="switchPart(PART.BRACK)" :class="{ 'focus': part === PART.BODY }">刹车</button>
+        <button @click="switchPart(PART.BRACK)" :class="{ 'focus': part === PART.BODY }"><img :src="brakeImg" >刹车</button>
       </li>
     </ul>
     <div class="colors" v-if="part!==PART.DEFAULT">
-      <span v-for="item in optionColors" :style="{ 'background-color': item }" @click="changeColor(item, part)"></span>
+      <span v-for="item in optionColors" :style="{ 'background-color': item }" @click="changeColor(item)"></span>
     </div>
   </div>
   
@@ -186,8 +186,8 @@ const init = (container: HTMLElement) => {
 
 // TODO 修改轮毂和刹车颜色
 
-const changeColor = (HEX:string, part: PART) => {
-  switch (part) {
+const changeColor = (HEX:string) => {
+  switch (part.value) {
     case PART.BODY:
       (BODY_COLOR.value && BODY_COLOR.value as any).material.color = new THREE.Color(HEX)
       break;
