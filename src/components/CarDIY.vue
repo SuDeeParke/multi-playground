@@ -42,16 +42,20 @@ const renderer = new THREE.WebGLRenderer({
   antialias: true
 })
 const controls = new OrbitControls(camera, renderer.domElement)
-
+controls.autoRotate = true
+controls.autoRotateSpeed = 0.6
+controls.enableDamping = true
+controls.dampingFactor = 0.1
+controls.enablePan = false
 
 const setting = () => {
   // camera
-  // TODO 设置平移参数，并禁止之后平移
-  camera.position.x = 20
-  camera.position.y = 10
-  camera.position.z = 40
-  camera.lookAt(new THREE.Vector3(0, 0, 0))
+  camera.position.set(-41.4910845227641, 13.689872979215357,6.577843974217032)
+  camera.rotation.setFromQuaternion(new THREE.Quaternion(0.04, 0.92, 0.11, -0.34))
+  camera.lookAt(new THREE.Vector3(0, 0, 0));
+  
 
+  (window as any).CAMERA = camera
   //renderer
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -63,6 +67,8 @@ const setting = () => {
   // environment
   scene.environment = pmremGenerator.fromScene(new RoomEnvironment(), 0.04).texture
   scene.background = new THREE.Color(0x333333)
+  scene.translateY(-10)
+
   
 }
 
@@ -144,13 +150,13 @@ const init = (container: HTMLElement) => {
   let angle = 0
   container.appendChild(renderer.domElement);
   renderer.setAnimationLoop(() => {
-    angle += 0.005
-    if(angle>=360) {
-      angle = 0
-    }
-    light.position.setX(Math.sin(angle) * 50)
-    light.position.setZ(Math.cos(angle) * 50)
-    scene.rotateY(-0.001)
+    // angle += 0.005
+    // if(angle>=360) {
+    //   angle = 0
+    // }
+    // light.position.setX(Math.sin(angle) * 50)
+    // light.position.setZ(Math.cos(angle) * 50)
+    // scene.rotateY(-0.001)
     controls.update()
     renderer.render(scene, camera)
   })
