@@ -7,20 +7,16 @@ import CarDIY from "./components/CarDIY.vue";
 </script>
 
 <template>
-  <!-- <div class="group">
-    <FlipClock></FlipClock>
-    <FlipNum></FlipNum>
-  </div> -->
-
-  <!-- <div class="group">
-    <Des criplayer></Des>
-    <MouseLight></MouseLight>
-  </div> -->
-
 
   <div class="group">
-    <CarDIY></CarDIY>
+    <Descriplayer></Descriplayer>
+    <MouseLight></MouseLight>
   </div>
+
+
+  <!-- <div class="group">
+    <CarDIY></CarDIY>
+  </div> -->
 
 </template>
 
