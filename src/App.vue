@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import MouseLight from "./components/MouseLight.vue";
 import Descriplayer from "./components/Descriplayer.vue";
-import FlipClock from "./components/FlipClock.vue";
-import FlipNum from "./components/FlipNum.vue";
 import CarDIY from "./components/CarDIY.vue";
+import Education from "./components/Education.vue";
 </script>
 
 <template>
 
-  <div class="group">
+  <!-- <div class="group">
     <Descriplayer></Descriplayer>
     <MouseLight></MouseLight>
+  </div> -->
+  <div class="group">
+    <Education></Education>
   </div>
-
 
   <!-- <div class="group">
     <CarDIY></CarDIY>
@@ -21,9 +22,24 @@ import CarDIY from "./components/CarDIY.vue";
 </template>
 
 <style lang="scss" scoped>
+
+
 .group{
   position: relative;
   width: 100%;
   height: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+</style>
+
+<style>
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+#app {
+  overflow-x: hidden;
 }
 </style>
