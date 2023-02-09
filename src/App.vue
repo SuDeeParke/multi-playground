@@ -7,10 +7,10 @@ import Education from "./components/Education.vue";
 
 <template>
 
-  <!-- <div class="group">
+  <div class="group">
     <Descriplayer></Descriplayer>
     <MouseLight></MouseLight>
-  </div> -->
+  </div>
   <div class="group">
     <Education></Education>
   </div>
@@ -33,13 +33,3 @@ import Education from "./components/Education.vue";
 }
 </style>
 
-<style>
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-#app {
-  overflow-x: hidden;
-}
-</style>
