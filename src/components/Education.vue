@@ -42,9 +42,7 @@ import school from '@/assets/images/school.jpg'
     padding: 25px;
     z-index: 1;
     background-color: rgba($color: #000, $alpha: 0.2);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(5px);
-    // background-image: linear-gradient(to bottom, rgba(0,0,0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    background-image: linear-gradient(to bottom, rgba(0,0,0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
     color: #fff;
     h1{
       background-color: #000;
