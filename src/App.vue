@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import MouseLight from "./components/MouseLight.vue";
 import Descriplayer from "./components/Descriplayer.vue";
-import CarDIY from "./components/CarDIY.vue";
 import Education from "./components/Education.vue";
 import Worked from "./components/Worked.vue"
 </script>
@@ -27,14 +26,16 @@ import Worked from "./components/Worked.vue"
 </template>
 
 <style lang="scss" scoped>
-
-
 .group{
   position: relative;
   width: 100%;
   height: 100%;
   overflow-y: hidden;
   overflow-x: hidden;
+}
+.group-extend {
+  height: auto;
+  overflow-y: unset;
 }
 </style>
 
