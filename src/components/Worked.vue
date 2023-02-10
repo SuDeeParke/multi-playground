@@ -1,5 +1,7 @@
 
 <script setup lang="ts">
+import FlipCard from './FlipCard.vue';
+
 
 </script>
 
@@ -9,10 +11,20 @@
       <h2>工作经历</h2>
     </div>
     <section class="content">
-      <div class="left">
-        <p class="number">1<span class="unit">year</span></p>
-        <p class="desc">参加工作时常</p>
-      </div>
+      <FlipCard>
+        <template #front>
+          <div class="front-content">
+            <p class="number">1<span class="unit">year</span></p>
+            <p class="desc">参加工作时常</p>
+          </div>
+        </template>
+        <template #back>
+          <div class="back-content">
+            hhh
+          </div>
+        </template>
+      </FlipCard>
+      
       <div class="middle">
         <p class="number">8<span class="unit">个</span></p>
         <p class="desc">大中型项目</p>
@@ -55,27 +67,20 @@
     align-items: center;
     justify-content: center;
     padding: 5%;
-    div{
-      position: relative;
-      display: flex;
-      width: 25%;
-      height: 25vw;
-      border-radius: 15px;
-      background-color: #fff;
-      box-shadow: 0 0 10px 5px rgba($color: #000000, $alpha: 0.2);
-      padding: 20px;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      row-gap: 20px;
-      .number{
-        font-size: 9vw;
-        font-weight: bolder;
-      }
-      .unit{
-        margin-left: 10px;
-        font-size: 2vw;
-      }
+    perspective: 500px;
+    transform-style: preserve-3d;
+  }
+  .front-content {
+    
+
+    .number {
+      font-size: 9vw;
+      font-weight: bolder;
+    }
+
+    .unit {
+      margin-left: 10px;
+      font-size: 2vw;
     }
   }
 }
