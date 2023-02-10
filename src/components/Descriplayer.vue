@@ -1,10 +1,15 @@
 <template>
 <div class="descript-layer">
-  <h1>LookAt</h1>
-  <h2>The David</h2>
-  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam quam qui repudiandae vitae id necessitatibus
-    possimus voluptatibus odit ab, veritatis magni illo tempora, nulla iste facilis deserunt eveniet nisi voluptates.
+  <h1>Hello, Welcome!</h1>
+  <h2>欢迎来到我的个人网站</h2>
+  <p>
+    网站是临时搭建的, 这里展示了我个人的一些作品。主要是过往开发的一些小demo, 源码我会放在github上。
   </p>
+  <p>
+    The page is a temporary project, show those demo that created by me. I will post the source code on github. There are
+    several links for you to check.
+  </p> 
+  <p class="right">® sudongpeng</p>
 </div>
 </template>
 
@@ -32,8 +37,9 @@
     background-color: #000;
     color: #fff;
     padding: 5px 30px;
+    
   }
-
+  
   h2 {
     background-color: #fff;
     color: #000;
@@ -45,6 +51,9 @@
     color: #eee;
     margin-top: 30px;
     width: 500px;
+  }
+  p.right{
+    text-align: right;
   }
 }
 </style>
