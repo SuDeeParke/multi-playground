@@ -3,11 +3,12 @@
   <h1>Hello, Welcome!</h1>
   <h2>欢迎来到我的个人网站</h2>
   <p>
-    网站是临时搭建的, 这里展示了我个人的一些作品。主要是过往开发的一些小demo, 源码我会放在github上。
+    姑且把这里当作我的在线简历吧。我将这做一个简单的介绍。
+    同时我也会在这里展示一些我日常做的小玩意~
   </p>
   <p>
-    The page is a temporary project, show those demo that created by me. I will post the source code on github. There are
-    several links for you to check.
+    Let's take this as my online resume. I will make a brief introduction. At the same time, I will show some of my daily
+    demo here.
   </p> 
   <p class="right">® sudongpeng</p>
 </div>
