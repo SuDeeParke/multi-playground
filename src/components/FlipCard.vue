@@ -1,12 +1,15 @@
 <template>
-  <div class="flip-card">
-    <div class="front">
-      <slot name="front"></slot>
-    </div>
-    <div class="back">
-      <slot name="back"></slot>
+  <div class="op-wrap">
+    <div class="flip-card">
+      <div class="front">
+        <slot name="front"></slot>
+      </div>
+      <div class="back">
+        <slot name="back"></slot>
+      </div>
     </div>
   </div>
+  
   
 </template>
 
@@ -31,23 +34,29 @@
   text-align: center;
   
 }
-
-
-.flip-card {
-  position: relative; 
-  display: inline-block;
+.op-wrap{
   width: 20%;
   height: 20vw;
-  perspective: 500px;
-  transform-origin: 50% 50% 50%;
-  transform-style: preserve-3d;
-  transform: rotateY(0);
-  transition: all 0.3s;
   cursor: pointer;
-  &:hover{
-    transform: rotateY(180deg);
+  perspective: 500px;
+  .flip-card {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      transform-origin: 50% 50% 50%;
+      transform-style: preserve-3d;
+      transform: rotateY(0);
+      transition: all 0.3s;
+  }
+  &:hover {
+    .flip-card{
+      transform: rotateY(180deg);
+    }
   }
 }
+
+
 
 .front {
   @include cardshape;
