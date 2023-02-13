@@ -20,19 +20,50 @@ import FlipCard from './FlipCard.vue';
         </template>
         <template #back>
           <div class="back-content">
-            hhh
+            <dl>
+              <li>2021年11月进入公司工作</li>
+              <li>曾就职于一家数字孪生企业</li>
+            </dl>
           </div>
         </template>
       </FlipCard>
       
-      <div class="middle">
-        <p class="number">8<span class="unit">个</span></p>
-        <p class="desc">大中型项目</p>
-      </div>
-      <div class="right">
-        <p class="number">15<span class="unit">+</span></p>
-        <p class="desc">笔记数量</p>
-      </div>
+
+      <FlipCard>
+        <template #front>
+          <div class="front-content">
+            <p class="number">8<span class="unit">个</span></p>
+            <p class="desc">大中型项目</p>
+          </div>
+        </template>
+        <template #back>
+        <div class="back-content">
+          <dl>
+            <li>2021年11月进入公司工作</li>
+            <li>曾就职于一家数字孪生企业</li>
+          </dl>
+        </div>
+        </template>
+      </FlipCard>
+
+      <FlipCard>
+        <template #front>
+          <div class="front-content">
+            <p class="number">15<span class="unit">+</span></p>
+            <p class="desc">笔记数量</p>
+          </div>
+        </template>
+        <template #back>
+          <div class="back-content">
+            <dl>
+              <li>2021年11月进入公司工作</li>
+              <li>曾就职于一家数字孪生企业</li>
+            </dl>
+          </div>
+        </template>
+      
+      </FlipCard>
+      
     </section>
   </div>
 </template>
@@ -82,6 +113,9 @@ import FlipCard from './FlipCard.vue';
       margin-left: 10px;
       font-size: 2vw;
     }
+  }
+  .back-content{
+    text-align: left;
   }
 }
 </style>

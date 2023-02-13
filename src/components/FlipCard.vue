@@ -18,7 +18,7 @@
 </script>
 
 <style lang="scss" scoped>
-@mixin cardshape($shadow: 0 0 10px 5px rgba($color: #000000, $alpha: 0.2)) {
+@mixin cardshape($shadow: 0 0 10px 0px  rgba($color: #000000, $alpha: 0.2)) {
   position: absolute;
   display: flex;
   width: 100%;
