@@ -39,19 +39,24 @@
   width: 20%;
   height: 20vw;
   perspective: 500px;
-  transform-style: preserve-3d;
   transform-origin: 50% 50% 50%;
-  transform: rotateY(45deg);
+  transform-style: preserve-3d;
+  transform: rotateY(0);
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover{
+    transform: rotateY(180deg);
+  }
 }
 
 .front {
   @include cardshape;
-  z-index: 2;
-  backface-visibility: hidden
+  z-index: 1;
 }
 
 .back{
   @include cardshape(0 0 0 rgba(0,0,0,0));
-  z-index: 3;
+  transform:  translateZ(-1px) rotateY(180deg);
+  z-index: 1;
 }
 </style>
