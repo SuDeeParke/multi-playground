@@ -3,6 +3,7 @@ import MouseLight from "./components/MouseLight.vue";
 import Descriplayer from "./components/Descriplayer.vue";
 import Education from "./components/Education.vue";
 import Worked from "./components/Worked.vue"
+import Hobby from "./components/Hobby.vue";
 </script>
 
 <template>
@@ -17,6 +18,10 @@ import Worked from "./components/Worked.vue"
 
   <div class="group">
     <Worked></Worked>
+  </div>
+
+  <div class="group">
+    <Hobby></Hobby>
   </div>
 
   <!-- <div class="group">
