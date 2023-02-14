@@ -9,13 +9,18 @@
 </template>
 
 <style lang="scss" scoped>
+.hobby{
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    height: 100%;
+    overflow: auto;
+}
 .title{
   text-align: center;
   perspective-origin: 50% 0%;
-  transform: rotateY(45deg);
+  transform: rotateY(0deg);
   transform-style: preserve-3d;
-  perspective: 1000px;
-  height: 500px;
+  height: 200vw;
   div{
     position: relative;
     display: inline-block;
@@ -42,10 +47,10 @@
     }
 
     &:nth-of-type(1){
-      transform: translateZ(-900px)  scale(2);
+      transform: translateZ(-200px)  scale(1);
     }
     &:nth-of-type(2) {
-      transform: translateZ(200px) scale(1.01);
+      transform: translateZ(0px) scale(1.60);
     }
     &:nth-of-type(3) {
       transform: translateZ(-10px) scale(1.01);
