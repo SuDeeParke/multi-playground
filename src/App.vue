@@ -20,9 +20,8 @@ import Hobby from "./components/Hobby.vue";
     <Worked></Worked>
   </div>
 
-  <div class="group">
     <Hobby></Hobby>
-  </div>
+
 
   <!-- <div class="group">
     <CarDIY></CarDIY>
@@ -38,9 +37,18 @@ import Hobby from "./components/Hobby.vue";
   overflow-y: hidden;
   overflow-x: hidden;
 }
-.group-extend {
-  height: auto;
-  overflow-y: unset;
+
+</style>
+
+<style>
+#app {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #000;
+  overflow-y: auto;
 }
 </style>
 
