@@ -20,7 +20,7 @@ import Hobby from "./components/Hobby.vue";
     <Worked></Worked>
   </div>
 
-    <Hobby></Hobby>
+  <Hobby></Hobby>
 
 
   <!-- <div class="group">
