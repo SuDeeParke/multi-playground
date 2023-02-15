@@ -27,7 +27,7 @@
     color: #000;
     background-color: rgba($color: #000000, $alpha: 0);
     z-index: 1;
-    text-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.5);
+    text-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.3);
     &:nth-of-type(1){
       transform: translateZ(-100px) scale(1.9);
     }
