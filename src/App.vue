@@ -4,11 +4,13 @@ import Descriplayer from "./components/Descriplayer.vue";
 import Education from "./components/Education.vue";
 import Worked from "./components/Worked.vue"
 import Hobby from "./components/Hobby.vue";
+import TweenAnimation from "./components/unuse/TweenAnimation.vue";
+
 </script>
 
 <template>
 
-  <div class="group">
+  <!-- <div class="group">
     <Descriplayer></Descriplayer>
     <MouseLight></MouseLight>
   </div>
@@ -20,13 +22,16 @@ import Hobby from "./components/Hobby.vue";
     <Worked></Worked>
   </div>
 
-  <Hobby></Hobby>
+  <Hobby></Hobby> -->
 
 
   <!-- <div class="group">
     <CarDIY></CarDIY>
   </div> -->
 
+  <div class="group">
+    <TweenAnimation></TweenAnimation>
+  </div>
 </template>
 
 <style lang="scss" scoped>
