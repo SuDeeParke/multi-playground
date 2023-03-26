@@ -3,9 +3,7 @@
 </script>
 
 <template>
-  <!-- <div class="hobby"> -->
     <h2 class="title"><div>喜</div><div>爱</div><div>的</div><div>事</div><div>物</div></h2>
-  <!-- </div> -->
 </template>
 
 <style lang="scss" scoped>
