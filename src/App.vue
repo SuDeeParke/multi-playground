@@ -5,6 +5,7 @@ import Education from "./components/Education.vue";
 import Worked from "./components/Worked.vue"
 import Hobby from "./components/Hobby.vue";
 import TweenAnimation from "./components/unuse/TweenAnimation.vue";
+import BloomEffect from "./components/unuse/BloomEffect.vue";
 
 </script>
 
@@ -29,8 +30,12 @@ import TweenAnimation from "./components/unuse/TweenAnimation.vue";
     <CarDIY></CarDIY>
   </div> -->
 
-  <div class="group">
+  <!-- <div class="group">
     <TweenAnimation></TweenAnimation>
+  </div> -->
+
+  <div class="group">
+    <BloomEffect></BloomEffect>
   </div>
 </template>
 
